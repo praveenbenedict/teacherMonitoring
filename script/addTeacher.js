@@ -5,13 +5,13 @@ $(document).ready(function () {
         var name = $('input[name=teacherName]').val();
         var phoneNo = $('input[name=phoneNo').val();
 
-        if (name.length != 0 && phoneNo.length != 10) {
+        if (name.length == 0 ) {
             alert('Check entry details again');
         } else {
             var database = firebase.database();
             var details = {
                 name: name,
-                phoneNo: phoneNo,
+                mailId: phoneNo,
                 isBusy: false
             }
             database.ref('/staffDetails/' + name).set(details);
