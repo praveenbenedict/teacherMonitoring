@@ -1,5 +1,6 @@
-$(document).ready(function () {
+var open = false;
 
+$(document).ready(function () {
 
     var database = firebase.database();
     database.ref('/staffDetails/').once('value', function (data) {
@@ -24,27 +25,64 @@ $(document).ready(function () {
 
         var assign = {
             name: staffName,
-            lastDate: date,
-            eventName: eventName
+            lastDate: lastDate,
+            eventName: eventName,
+            mailId: ''
         };
 
-        database.ref('/currentlyAssigned/'+ staffName).set(assign);
-        database.ref('/staffDetails/' + staffName).update({
-            isBusy: true
-        });
+        
         database.ref('/staffDetails/'+staffName).once('value', function(data){
             data = data.val();
             console.log(data.mailId);
-
-
+            assign.mailId = data.mailId;
             queryString = `sendMail?mail=${data.mailId}&eventName=${eventName}&lastDate=${lastDate}` 
-            $.get('http://localhost:3000/' + queryString).done(function(data) {
+            $.get('https://sheltered-ravine-63268.herokuapp.com/' + queryString).done(function(data) {
                 console.log(data);
             });
+            database.ref('/currentlyAssigned/'+ staffName).set(assign);
+            database.ref('/staffDetails/' + staffName).update({
+                isBusy: true
+            });
         });
-        
 
+        
     });
+
+    $("#MenuIcon").click(function () {
+        open = true;
+        console.log("Menu Icon Clicked", open);
+        $("#MainMenu").css("left", "0px");
+
+        function showMenu() {
+            $("#MainMenu").css("-webkit-clip-path", "polygon(0 0,100% 0,100% 100%,0% 100%)");
+            $("#MenuIcon").animate({
+                right: '-100'
+            }, 300);
+        }
+        setTimeout(showMenu, 100);
+        $("#MenuIcon").hide();
+    });
+
+    $("#close").click(function () {
+        open = false;
+        $("#MainMenu").css("clip-path", "polygon(0 0,0% 0,100% 100%,0% 100%)");
+
+        function hideMenu() {
+            $("#MainMenu").css("left", "-300px");
+            $("#MenuIcon").animate({
+                right: '50'
+            }, 300);
+        }
+        setTimeout(hideMenu, 300);
+
+        function originalLayout() {
+        $("#MenuIcon").show();            
+        $("#MainMenu").css("clip-path", "polygon(0 0,100% 0,0% 100%,0% 100%)");
+        }
+        setTimeout(originalLayout, 600);
+    });
+    
+
 
 
 

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teacher Monitoring System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+
+  <div id="MenuIcon">
+    <div id="MenuLine"></div>
+  </div>
+
+  <div id="MainMenu">
+    <div id="navlogo">
+      <img src="img/logos/navlogo.png" height="75px" width="75px" />
+    </div>
+    <ul>
+      <li><a href ="/index.html">Assign Staff</a>
+        <div class="line"></div>
+      </li>
+      <li><a href = "/addTeacher.html">Add Staff</a>
+        <div class="line"></div>
+      </li>
+      <li><a href="/viewAssignments.html">View Assigned Staff</a>
+        <div class="line"></div>
+      </li>
+    </ul>
+    <div id="close">
+      <img src="img/logos/Close.png" height="30px" width="30px" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm"></div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <form>
+
+        <input type="text" name="eventName" placeholder="Event Name" required>
+        <br/>
+
+        <input type="date" name="date" placeholder="Last Date For Registration">
+        <br>
+
+        <select id="select-box">
+        </select>
+        <br/>
+        <input type="button" id="submitButton" value="Assign Staff" />
+      </form>
+    </div>
+
+    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm"></div>
+  </div>
+
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCd52jgPUaWnYQ52g4EOHFgAk5F-_gajBg",
+      authDomain: "teacher-monitoring-syste-2a943.firebaseapp.com",
+      databaseURL: "https://teacher-monitoring-syste-2a943.firebaseio.com",
+      projectId: "teacher-monitoring-syste-2a943",
+      storageBucket: "teacher-monitoring-syste-2a943.appspot.com",
+      messagingSenderId: "397902686650"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script/script.js"></script>
+
+</body>
+
+</html>
+
+<!-- <html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="col">
+    ST.JOSEPH'S COLLEGE OF ENGINEERING, CHENNAI - 119
+  </div>
+  <form class="container">
+    <div class="innercont">
+      <p>Event Name:</p>
+      <input type="text" name="eventName" class="flexObj">
+    </div>
+    <div class="innercont">
+      <p>Staff In - Charge</p>
+      <select id="selector" class="flexObj">
+
+        </select>
+
+    </div>
+    <div class="innercont">
+      <p>
+        <p class="flexObj1">Event date:</p>
+        <input type="date" name="eventDate" id="eventDate" class="flexObj">
+      </p>
+    </div>
+    <div class="innercont">
+      <p>
+        <p>Last date:</p>
+        <input type="date" name="submitDate" id="submitDate" class="flexObj">
+      </p>
+    </div>
+    <p>
+      <input type="button" value="submit" style="width: 100%;height: 50px;font-size: 25px;" id="submitButton">
+    </p>
+  </form>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    const config = {
+      apiKey: " AIzaSyAiYm61ihtm5AYK5W4mtklF0zd8CujMsvU",
+      authDomain: "temperory-f0ff2.firebaseapp.com",
+      databaseURL: "https://temperory-f0ff2.firebaseio.com",
+      storageBucket: "temperory-f0ff2.appspot.com"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="jquery.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html> -->

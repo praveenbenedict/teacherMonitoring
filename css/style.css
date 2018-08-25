@@ -1,4 +1,4 @@
-#col {
+/* #col {
     size: 50px;
     font-size: 50px;
     color: cyan;
@@ -24,4 +24,167 @@
     margin-left: auto;
     width: 45%;
     height: 40px;
+} */
+
+body {
+    margin:10px;
+    width:0px;
+    top:0px;
+    left:0px;
+    background-image: url(../img/bg.jpg);
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+#MenuIcon,
+#MainMenu {
+    z-index: 99999;
+}
+
+#MenuIcon {
+    background-color: rgba(0, 0, 0, 0.466);
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 50px;
+    right: 30px;
+}
+
+#MenuIcon:hover {
+    cursor: pointer;
+}
+
+#MenuLine {
+    height: 4px;
+    width: 36px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+}
+
+#MenuIcon:hover #MenuLine {
+    width: 40px;
+}
+
+#MenuLine::before {
+    content: '';
+    height: 4px;
+    width: 40px;
+    background-color: white;
+    position: absolute;
+    margin-top: 10px;
+    transition: all .3s;
+}
+
+#MenuIcon:hover #MenuLine::before {
+    width: 50px;
+}
+
+#MenuLine::after {
+    content: '';
+    height: 4px;
+    width: 40px;
+    background-color: white;
+    position: absolute;
+    margin-top: -10px;
+    transition: all .3s;
+}
+
+#MenuIcon:hover #MenuLine::after {
+    width: 50px;
+}
+
+#MainMenu {
+    height: 100vh;
+    width: 300px;
+    background-color: #181818;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: all .5s ease-in-out;
+}
+
+#MainMenu ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#MainMenu ul li {
+    margin: 20px;
+}
+
+#MainMenu ul li a{
+    color: white;
+}
+
+#MainMenu ul li:hover {
+    cursor: pointer;
+}
+
+#MainMenu .line {
+    height: 2px;
+    width: 150px;
+    background-color: white;
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    border-radius: 2px;
+    transform: translate(-50%);
+    transition: all .3s;
+}
+
+#MainMenu ul li:hover .line {
+    width: 180px;
+}
+
+#navlogo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transform: translate(-50%);
+}
+
+#close:hover {
+    cursor: pointer;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input, select{
+    display: block;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+input, select{
+    width: 100%;
+    padding: 10px;
+    margin: 30px;
 }

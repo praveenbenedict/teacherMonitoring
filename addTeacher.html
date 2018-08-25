@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Teacher</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -15,11 +14,49 @@
 
 
 
-    Staff Name : <br/>
-    <input type="text" name="teacherName" required><br/> Mail Id : <br/>
-    <input type="mail" name="phoneNo" required> <br/>
+    <div id="MenuIcon">
+        <div id="MenuLine"></div>
+    </div>
 
-    <button class="btn btn-primary" id="addTeacher">Add Staff</button>
+    <div id="MainMenu">
+        <div id="navlogo">
+            <img src="img/logos/navlogo.png" height="75px" width="75px" />
+        </div>
+        <ul>
+            <li><a href ="/index.html">Assign Staff</a>
+              <div class="line"></div>
+            </li>
+            <li><a href = "/addTeacher.html">Add Staff</a>
+              <div class="line"></div>
+            </li>
+            <li><a href="/viewAssignments.html">View Assigned Staff</a>
+              <div class="line"></div>
+            </li>
+          </ul>
+        <div id="close">
+            <img src="img/logos/Close.png" height="30px" width="30px" />
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-lg-3 col-md-3 hidden-xs hidden-sm"></div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form">
+            <input type="text" name="teacherName" placeholder="Staff Name" required>
+            <br/>
+            <input type="mail" name="phoneNo" placeholder="Mail Id" required>
+            <br/>
+            <input  type="password" name = "password" placeholder="Password" required>
+            <br/>
+            <button class="btn btn-primary" id="addTeacher">Add Staff</button>
+        </div>
+
+        <div class="col-lg-3 col-md-3 hidden-xs hidden-sm"></div>
+
+
+
+    </div>
+
 
 
 
